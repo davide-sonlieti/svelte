@@ -12,9 +12,9 @@
   } = {};
 	export { clazz as class };
 
-  /* 
+  /*
     Styles:
-    
+
     --simple-textfield-padding
     --simple-textfield-height
     --simple-textfield-width
@@ -53,15 +53,15 @@
 </script>
 
 <div
-  class="textfield-container {clazz.container || ''}"
+  class="textfield-container {clazz?.container || ''}"
 >
-  <div class="row {clazz.row || ''}">
+  <div class="row {clazz?.row || ''}">
     <slot name="prepend" {prependIcon} {iconSize}>
       {#if !!prependIcon}
         <Icon name={prependIcon} --icon-size={iconSize}></Icon>
       {/if}
     </slot>
-    <div class="textfield {clazz.field || ''}">
+    <div class="textfield {clazz?.field || ''}">
       <slot name="prepend-inner" {prependInnerIcon} {iconSize}>
         {#if !!prependInnerIcon}
           <Icon name={prependInnerIcon} --icon-size={iconSize}></Icon>
@@ -83,7 +83,7 @@
           on:keyup
           on:change
           name={name}
-          class={clazz.input || ''}
+          class={clazz?.input || ''}
           bind:this={input}
           {...$$restProps}
         />
@@ -103,7 +103,7 @@
           on:keyup
           on:change
           name={name}
-          class={clazz.input || ''}
+          class={clazz?.input || ''}
           bind:this={input}
           {...$$restProps}
         />
@@ -123,7 +123,7 @@
           on:keyup
           on:change
           name={name}
-          class={clazz.input || ''}
+          class={clazz?.input || ''}
           bind:this={input}
           {...$$restProps}
         />
@@ -143,7 +143,7 @@
           on:keyup
           on:change
           name={name}
-          class={clazz.input || ''}
+          class={clazz?.input || ''}
           bind:this={input}
           {...$$restProps}
         />
@@ -163,7 +163,7 @@
           on:keyup
           on:change
           name={name}
-          class={clazz.input || ''}
+          class={clazz?.input || ''}
           bind:this={input}
           {...$$restProps}
         />
@@ -180,7 +180,7 @@
       {/if}
     </slot>
   </div>
-  <div class="row {clazz.hint || ''}">
+  <div class="row {clazz?.hint || ''}">
     <slot name="hint">
       {#if !!hint}
         <span class="hint">{hint}</span>
@@ -205,7 +205,7 @@
     display: flex;
     align-items: center;
     gap: var(
-      --simple-textfield-outer-gap, 
+      --simple-textfield-outer-gap,
       var(--simple-textfield-default-outer-gap)
     );
     margin-bottom: var(
@@ -224,11 +224,11 @@
 
   .hint {
     margin-left: var(
-      --simple-textfield-hint-margin-left, 
+      --simple-textfield-hint-margin-left,
       var(--simple-textfield-default-hint-margin-left)
     );
     font-size: var(
-      --simple-textfield-hint-font-size, 
+      --simple-textfield-hint-font-size,
       var(--simple-textfield-default-hint-font-size)
     );
     color: var(
@@ -276,7 +276,7 @@
 
   .textfield:focus-within {
     background-color: var(
-      --simple-textfield-focus-background-color, 
+      --simple-textfield-focus-background-color,
       var(
         --simple-textfield-default-focus-background-color,
         var(
@@ -286,7 +286,7 @@
       )
     );
     box-shadow: var(
-      --simple-textfield-focus-box-shadow, 
+      --simple-textfield-focus-box-shadow,
       var(--simple-textfield-default-focus-box-shadow)
     );
   }
@@ -296,7 +296,7 @@
     width: 100%;
     background-color: transparent;
     font-size: var(
-      --simple-textfield-font-size, 
+      --simple-textfield-font-size,
       var(--simple-textfield-default-font-size)
     );
     font-weight: var(

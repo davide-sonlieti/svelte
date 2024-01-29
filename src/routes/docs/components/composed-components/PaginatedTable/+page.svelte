@@ -47,6 +47,16 @@
     mode: 'contains'
   },
   {
+    label: "Check",
+    active: false,
+    type: 'bool',
+    column: 'check',
+    description: 'Check?',
+    mode: 'equal',
+    name: 'check',
+    advanced: false
+  },
+  {
     label: "Product name",
     active: false,
     type: 'string',
@@ -54,6 +64,14 @@
     column: "productName",
     advanced: true,
     mode: 'like'
+  },
+  {
+    label: "Date",
+    active: false,
+    type: 'date',
+    name: "date",
+    column: "date",
+    mode: 'equal'
   },
   {
     label: 'Rating',
